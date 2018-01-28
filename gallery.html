@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chillout Mobile Bar</title>
+        <!-- Bootstrap -->
+        <link href="assets/css/plugins/plugins.css" rel="stylesheet">
+        <link href="assets/lightbox-2/css/lightbox.min.css" rel="stylesheet">
+        <!--main css file-->
+        <link href="assets/css/style.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="preloader">
+            <div id="preloader-inner"></div>
+        </div><!--/preloader-->
+        <!--===============main navigation + top bar==========================-->
+        <header class="header header-top-transparent">
+            <!--main navigation-->
+            <nav class="navbar navbar-light navbar-expand-lg navbar-static-top sticky-header">
+                <div class="container">                   
+                    <div class="navbar-header">
+                        <button type="button" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right collapsed" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-controls="navbarNavDropdown">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <i class=""></i>
+                            <img src="assets/images/logo.png" style="height: 70px;" alt="logo" class="logo-default">
+                            <img src="assets/images/logo2.png" style="height: 40px;" alt="logo" class="logo-scroll">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto scroll-to">
+                            <li class="nav-item"><a href="./#home" class="nav-link">home</a></li>
+                            <li class="nav-item"><a href="./#about" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="./#packages" class="nav-link">Packages</a></li>
+                            <li class="nav-item"><a href="./#reservation" class="nav-link">Reservation</a></li>
+                            <li class="nav-item"><a href="./gallery.html" class="nav-link active">Gallery</a></li>
+                            <li class="nav-item"><a href="./#contact" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+        </header>
+
+        <!--===============end main navigation + top bar =====================-->
+
+
+
+        <!--==============page header============-->
+        <div class="page-breadcrumb">
+            <div class="container text-center">
+                <h1>Gallery</h1>
+            </div>
+        </div>
+        <!--==============end page header============-->
+        <div class="container-fluid gallery no-padd">
+            <div class="row no-margin">
+                <script>
+                    var not_included = [2, 3, 18, 19, 20, 23, 24];
+                    for(var i=1; i<=32; i++) {
+                        if (not_included.includes(i)) {
+                            // 
+                        } else {
+                            var html = '<div class="col-md-6 col-lg-3  no-padd">';
+                                html += '   <a class="gallery-box" href="assets/images/gallery/'+ i +'.jpg" data-lightbox="gallery">';
+                                html += '   <img src="assets/images/gallery/'+ i +'.jpg" alt="" class="img-fluid">';
+                                html += '   <div class="gallery-overlay">';
+                                html += '       <span class="ion-ios-plus-empty"></span>';
+                                html += '   </div>';
+                                html += '   </a>';
+                                html += '</div>';
+                            document.write(html);
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 margin-b-30">
+                        <img class="margin-b-20" style="height: 40px" src="assets/images/logo.png" alt="">
+                        <p>Chillout Mobile Bar is sure to impress your guest with an amazing line of drinks and cocktails.</p>
+                        <p><a href="https://www.facebook.com/chilloutmobilebarcebu/" target="_blank">Visit Facebook Page</a></p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 margin-b-30">
+                        <h3>Opening hours</h3>
+                        <p><span class="text-color">Mon-Sun :</span> 12:00PM - 12AM</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 margin-b-30">
+                        <h3>Contact Us</h3>
+                        <p class="lead">
+                            Block 5, Lot 17, Deca Homes, Phase 1, Tungkil, Minglanilla, Cebu City, Cebu, 6046
+                        </p>
+                        <p class="lead"><a href="tel:(+63) 921-397-1861">(+63) 921-397-1861</a></p>
+                        <p><a href="mailto:chilloutmobilebar@yahoo.com">chilloutmobilebar@yahoo.com</a></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <span>&copy; Copyright 2018. Chillout Mobile Bar</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--back to top-->
+        <a href="#" class="scrollToTop"><i class="ion-android-arrow-up"></i></a>
+        <!--back to top end-->
+
+
+
+        <!-- jQuery plugins-->
+        <script src="assets/js/plugins/plugins.js"></script>
+        <script src="assets/js/template-custom.js" type="text/javascript"></script> 
+        <script src="assets/lightbox-2/js/lightbox.min.js"></script>
+    </body>
+</html>
