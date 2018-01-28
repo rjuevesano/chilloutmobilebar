@@ -16,7 +16,7 @@ $('.resto-contact').submit(function() {
     
     $.ajax({ // Send an offer process with AJAX
         type: 'POST',
-        url: 'https://wordscapesanswers.appspot.com/api/v1/send',
+        url: 'https://wordscapesanswers.appspot.com/api/v1/send2',
         data: submitData + '&action=add',
         dataType: 'html',
         success: function(msg){
