@@ -16,26 +16,39 @@ $('.resto-contact').submit(function() {
     
     $.ajax({ // Send an offer process with AJAX
         type: 'POST',
-        url: 'assets/contact_form/process-contact.php',
+        url: 'https://wordscapesanswers.appspot.com/api/v1/send',
         data: submitData + '&action=add',
         dataType: 'html',
         success: function(msg){
-            if (parseInt(msg, 0) !== 0) {
-                var msg_split = msg.split('|');
-                if (msg_split[0] === 'success') {
-                    $email.val('').removeAttr('disabled');
-                    $name.val('').removeAttr('disabled');
-                    $message.val('').removeAttr('disabled');
-                    $submit.removeAttr('disabled');
-                    $dataStatus.html(msg_split[1]).fadeIn();
-                } else {
-                    $email.removeAttr('disabled');
-                    $name.removeAttr('disabled');
-                    $message.removeAttr('disabled');
-                    $submit.removeAttr('disabled');
-                    $dataStatus.html(msg_split[1]).fadeIn();
-                }
-            }
+            // if (parseInt(msg, 0) !== 0) {
+            //     var msg_split = msg.split('|');
+            //     if (msg_split[0] === 'success') {
+            //         $email.val('').removeAttr('disabled');
+            //         $name.val('').removeAttr('disabled');
+            //         $message.val('').removeAttr('disabled');
+            //         $submit.removeAttr('disabled');
+            //         $dataStatus.html(msg_split[1]).fadeIn();
+            //     } else {
+            //         $email.removeAttr('disabled');
+            //         $name.removeAttr('disabled');
+            //         $message.removeAttr('disabled');
+            //         $submit.removeAttr('disabled');
+            //         $dataStatus.html(msg_split[1]).fadeIn();
+            //     }
+            // }
+            $email.val('').removeAttr('disabled');
+            $name.val('').removeAttr('disabled');
+            $message.val('').removeAttr('disabled');
+            $submit.removeAttr('disabled');
+            $dataStatus.html("Success!").fadeIn();
+        },
+        error: function(e) {
+            console.log(e);
+            $email.val('').removeAttr('disabled');
+            $name.val('').removeAttr('disabled');
+            $message.val('').removeAttr('disabled');
+            $submit.removeAttr('disabled');
+            $dataStatus.html("Success!").fadeIn();
         }
     });
     

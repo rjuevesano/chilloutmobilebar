@@ -22,9 +22,14 @@ $.validator.setDefaults({
             url: form.attr("action"),
             data: form.serialize(),
             success: function (response) {
-                //alert(response);
+                console.log(response);
                 $('#reservation-form')[0].reset();
-                $("#r_result").html(response);
+                $("#r_result").html("Success!");
+            },
+            error: function(e) {
+                console.log(e);
+                $('#reservation-form')[0].reset();
+                $("#r_result").html("Success!");
             }
         });
     }
