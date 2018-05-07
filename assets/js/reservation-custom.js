@@ -17,6 +17,23 @@ $(function () {
 $.validator.setDefaults({
     submitHandler: function () {
         var form = $("#reservation-form");
+
+        $.ajax({
+            url: form.attr("action"),
+            data: form.serialize(),
+            type: 'POST',
+            crossDomain: true,
+            dataType: 'jsonp',
+            success: function() {
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+
+        $('#reservation-form')[0].reset();
+        $("#r_result").html("Success!");
+
         // $.ajax({
         //     type: "POST",
         //     url: form.attr("action"),
@@ -32,18 +49,6 @@ $.validator.setDefaults({
         //         $("#r_result").html("Success!");
         //     }
         // });
-
-        axios.post(form.attr("action") + '?' + form.serialize())
-        .then(function (response) {
-            console.log(response);
-            $('#reservation-form')[0].reset();
-            $("#r_result").html("Success!");
-        })
-        .catch(function (e) {
-            console.log(e);
-            $('#reservation-form')[0].reset();
-            $("#r_result").html("Success!");
-        });
     }
 });
 $(function () {
