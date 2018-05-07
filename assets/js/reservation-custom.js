@@ -17,20 +17,34 @@ $(function () {
 $.validator.setDefaults({
     submitHandler: function () {
         var form = $("#reservation-form");
-        $.ajax({
-            type: "POST",
-            url: form.attr("action"),
-            data: form.serialize(),
-            success: function (response) {
-                console.log(response);
-                $('#reservation-form')[0].reset();
-                $("#r_result").html("Success!");
-            },
-            error: function(e) {
-                console.log(e);
-                $('#reservation-form')[0].reset();
-                $("#r_result").html("Success!");
-            }
+        // $.ajax({
+        //     type: "POST",
+        //     url: form.attr("action"),
+        //     data: form.serialize(),
+        //     success: function (response) {
+        //         console.log(response);
+        //         $('#reservation-form')[0].reset();
+        //         $("#r_result").html("Success!");
+        //     },
+        //     error: function(e) {
+        //         console.log(e);
+        //         $('#reservation-form')[0].reset();
+        //         $("#r_result").html("Success!");
+        //     }
+        // });
+
+        axios.post(form.attr("action") + '?' + form.serialize(), {
+            headers: {'Access-Control-Allow-Origin': '*'}
+        })
+        .then(function (response) {
+            console.log(response);
+            $('#reservation-form')[0].reset();
+            $("#r_result").html("Success!");
+        })
+        .catch(function (e) {
+            console.log(e);
+            $('#reservation-form')[0].reset();
+            $("#r_result").html("Success!");
         });
     }
 });
