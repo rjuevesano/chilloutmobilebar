@@ -14,9 +14,7 @@ $('.resto-contact').submit(function() {
     
     $dataStatus.show().html('<div class="alert alert-info"><strong>Loading...</strong></div>');
 
-    axios.post('https://wordscapesanswers.appspot.com/api/v1/send2?' + submitData + '&action=add', {
-        headers: {'Access-Control-Allow-Origin': '*'}
-    })
+    axios.post('https://wordscapesanswers.appspot.com/api/v1/send2?' + submitData + '&action=add')
     .then(function (response) {
         $email.val('').removeAttr('disabled');
         $name.val('').removeAttr('disabled');

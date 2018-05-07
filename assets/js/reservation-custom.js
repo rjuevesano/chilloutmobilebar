@@ -33,9 +33,7 @@ $.validator.setDefaults({
         //     }
         // });
 
-        axios.post(form.attr("action") + '?' + form.serialize(), {
-            headers: {'Access-Control-Allow-Origin': '*'}
-        })
+        axios.post(form.attr("action") + '?' + form.serialize())
         .then(function (response) {
             console.log(response);
             $('#reservation-form')[0].reset();
